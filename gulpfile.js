@@ -112,7 +112,7 @@ gulp.task('build', function() {
   runSequence('clean', 'compile', 'minifyVersion');
 });
 
-gulp.task('deploy', ['build'], function() {
+gulp.task('deploy', function() {
   return gulp.src('./dist/**/*')
     .pipe($.ghPages());
 });
