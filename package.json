@@ -1,0 +1,28 @@
+{
+  "name": "mattjohnson",
+  "version": "1.0.0",
+  "description": "This is the website for mattjohnson.",
+  "main": "gulpfile.js",
+  "author": "matt",
+  "devDependencies": {
+    "browser-sync": "^1.7.2",
+    "del": "^1.1.0",
+    "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^2.0.0",
+    "gulp-csso": "^0.2.9",
+    "gulp-filter": "^1.0.2",
+    "gulp-gh-pages": "^0.4.0",
+    "gulp-load-plugins": "^0.7.1",
+    "gulp-notify": "^2.0.1",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rev-all": "^0.7.1",
+    "gulp-ruby-sass": "^1.0.0-alpha",
+    "gulp-size": "^1.1.0",
+    "gulp-sourcemaps": "^1.2.8",
+    "gulp-uglify": "^1.0.2",
+    "gulp-util": "^3.0.1",
+    "normalize.css": "^3.0.2",
+    "run-sequence": "^1.0.2",
+    "vinyl-paths": "^1.0.0"
+  }
+}
