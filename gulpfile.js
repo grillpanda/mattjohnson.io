@@ -94,7 +94,7 @@ gulp.task('minifyVersion', function(cb) {
     .pipe(cssFilter.restore())
     // Version assets
     .pipe($.revAll({
-      ignore: ['.html']
+      ignore: ['.html', 'CNAME']
     }))
     .pipe(gulp.dest(DIR.DIST))
     // Show asset sizes
