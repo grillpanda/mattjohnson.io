@@ -26,6 +26,7 @@ gulp.task('clean', function(cb) {
 
 gulp.task('compile', [
   'compile:extras',
+  'compile:fonts',
   'compile:html',
   'compile:images',
   'compile:scripts',
@@ -35,6 +36,11 @@ gulp.task('compile', [
 gulp.task('compile:extras', function() {
   return gulp.src(['./CNAME', DIR.APP + '/favicon.ico'])
     .pipe(gulp.dest(DIR.DIST));
+});
+
+gulp.task('compile:fonts', function() {
+  return gulp.src(DIR.APP + '/fonts/**/*')
+    .pipe(gulp.dest(DIR.DIST + '/fonts'));
 });
 
 gulp.task('compile:html', function() {
@@ -67,7 +73,7 @@ gulp.task('compile:styles', function() {
 });
 
 gulp.task('minifyVersion', function(cb) {
-  var cssGlob     = '**/*.css',
+  var cssGlob     = '/styles/**/*.css',
       jsGlob      = '**/*.js',
       mapGlob     = '**/*.map',
       cssFilter   = $.filter(cssGlob),
@@ -94,7 +100,7 @@ gulp.task('minifyVersion', function(cb) {
     .pipe(cssFilter.restore())
     // Version assets
     .pipe($.revAll({
-      ignore: ['.html', 'CNAME']
+      ignore: ['.html', 'CNAME', 'fonts\/.+']
     }))
     .pipe(gulp.dest(DIR.DIST))
     // Show asset sizes
